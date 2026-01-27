@@ -844,7 +844,7 @@ void FirstPerson::update_player_arm_ik(RETransform* transform) {
 
         if (is_hmd_active) {
             attach_offset.x = 0.0f;
-            attach_offset.z = 0.0f;
+            //attach_offset.z = 0.0f;
         }
 
         auto offset = glm::extractMatrixRotation(m_last_camera_matrix) * (attach_offset * Vector4f{ -0.1f, 0.1f, 0.1f, 0.0f });
