@@ -1611,7 +1611,7 @@ void FirstPerson::update_camera_transform(RETransform* transform) {
     auto attach_offset = m_attach_offsets[m_player_name];
 
     if (vr->is_hmd_active()) {
-        attach_offset.x = 0.0f;
+        //attach_offset.x = 0.0f;
         attach_offset.z = 0.0f;
     }
 
