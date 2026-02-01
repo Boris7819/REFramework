@@ -35,19 +35,19 @@ FirstPerson::FirstPerson() {
 #else
     // Specific player model configs
     // Leon
-    m_attach_offsets["pl0000"] = Vector4f{ -0.26f, 0.435f, 1.0f, 0.0f };
+    m_attach_offsets["pl0000"] = Vector4f{ 0.0f, 0.435f, 0.3f, 0.0f };
     // Claire
-    m_attach_offsets["pl1000"] = Vector4f{ -0.23f, 0.4f, 1.0f, 0.0f };
+    m_attach_offsets["pl1000"] = Vector4f{ 0.0f, 0.400f, 0.3f, 0.0f };
     // Sherry
-    m_attach_offsets["pl3000"] = Vector4f{ -0.278f, 0.435f, 0.945f, 0.0f };
+    m_attach_offsets["pl3000"] = Vector4f{ 0.0f, 0.435f, 0.945f, 0.0f };
     // Hunk
-    m_attach_offsets["pl4000"] = Vector4f{ -0.26f, 0.435f, 1.0f, 0.0f };
+    m_attach_offsets["pl4000"] = Vector4f{ 0.0f, 0.435f, 1.0f, 0.0f };
     // Kendo
-    m_attach_offsets["pl5000"] = Vector4f{ -0.24f, 0.4f, 1.0f, 0.0f };
+    m_attach_offsets["pl5000"] = Vector4f{ 0.0f, 0.4f, 1.0f, 0.0f };
     // Forgotten Soldier
-    m_attach_offsets["pl5600"] = Vector4f{ -0.316, 0.556f, 1.02f, 0.0f };
+    m_attach_offsets["pl5600"] = Vector4f{ 0.0, 0.556f, 1.02f, 0.0f };
     // Elizabeth
-    m_attach_offsets["pl6400"] = Vector4f{ -0.316, 0.466f, 0.79f, 0.0f };
+    m_attach_offsets["pl6400"] = Vector4f{ 0.0, 0.466f, 0.79f, 0.0f };
 #endif
 }
 
@@ -844,7 +844,7 @@ void FirstPerson::update_player_arm_ik(RETransform* transform) {
 
         if (is_hmd_active) {
             attach_offset.x = 0.0f;
-            //attach_offset.z = 0.0f;
+            attach_offset.z = 0.0f;
         }
 
         auto offset = glm::extractMatrixRotation(m_last_camera_matrix) * (attach_offset * Vector4f{ -0.1f, 0.1f, 0.1f, 0.0f });
@@ -1612,7 +1612,7 @@ void FirstPerson::update_camera_transform(RETransform* transform) {
 
     if (vr->is_hmd_active()) {
         //attach_offset.x = 0.0f;
-        attach_offset.z = 0.0f;
+        //attach_offset.z = 0.0f;
     }
 
     auto offset = glm::extractMatrixRotation(camera_matrix) * (attach_offset * Vector4f{ -0.1f, 0.1f, 0.1f, 0.0f });
