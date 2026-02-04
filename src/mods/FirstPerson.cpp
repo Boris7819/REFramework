@@ -1613,9 +1613,11 @@ void FirstPerson::update_camera_transform(RETransform* transform) {
     if (vr->is_hmd_active()) {
         //attach_offset.x = 0.0f;
         //attach_offset.z = 0.0f;
+        auto offset = Vector3f{ 0.0, 0.05, 0.02 };
     }
-
-    auto offset = glm::extractMatrixRotation(camera_matrix) * (attach_offset * Vector4f{ -0.1f, 0.1f, 0.1f, 0.0f });
+    else {
+        auto offset = glm::extractMatrixRotation(camera_matrix) * (attach_offset * Vector4f{ -0.1f, 0.1f, 0.1f, 0.0f });
+    }
     auto final_pos = Vector3f{ bone_pos + offset };
 
     // Average the distance to the wanted rotation
