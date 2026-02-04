@@ -1615,7 +1615,9 @@ void FirstPerson::update_camera_transform(RETransform* transform) {
     if (vr->is_hmd_active()) {
         //attach_offset.x = 0.0f;
         //attach_offset.z = 0.0f;
-        offset = Vector3f{ 0.0, 0.05, 0.02 };
+        offset.x = 0.00f;
+        offset.y = 0.05f;
+        offset.z = 0.02f;
     }
     
     auto final_pos = Vector3f{ bone_pos + offset };
