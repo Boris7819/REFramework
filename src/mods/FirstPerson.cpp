@@ -1616,6 +1616,7 @@ void FirstPerson::update_camera_transform(RETransform* transform) {
         //attach_offset.x = 0.0f;
         //attach_offset.z = 0.0f;
         offset = Vector3f{ 0.0, 0.05, 0.02 };
+    }
     
     auto final_pos = Vector3f{ bone_pos + offset };
 
